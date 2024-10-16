@@ -57,11 +57,11 @@
                     </div>
                 </a>
             </div>
+            {% block header_menu %}
+            {{ menu_macros::menu(config=config, current_path=current_path) }}
+            {% endblock header_menu %}
         </div>
 
-        {% block header_menu %}
-        {{ menu_macros::menu(config=config, current_path=current_path) }}
-        {% endblock header_menu %}
     </header>
     {% endblock header %}
 

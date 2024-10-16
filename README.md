@@ -1,3 +1,10 @@
+This fork mostly makes minor changes to suit my own boring sensibilities, such as:
+
+- A grey theme
+- Removing the vertical line flourish
+- Inlining the menu items with the header
+  - And some mobile tweaks
+
 # Terminimal
 
 [![Build Status](https://github.com/pawroman/zola-theme-terminimal/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/pawroman/zola-theme-terminimal/actions/workflows/pages/pages-build-deployment)
