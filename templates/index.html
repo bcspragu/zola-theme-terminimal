@@ -75,10 +75,8 @@
             {% endif -%}
 
             {%- for page in show_pages %}
-                <div class="post on-list">
-                    {{ post_macros::header(page=page) }}
-
-                    {{ post_macros::content(page=page, summary=true, show_only_description=page.extra.show_only_description | default(value=false)) }}
+                <div class="post post--header-only">
+                    {{ post_macros::index_header(page=page) }}
                 </div>
             {% endfor -%}
             <div class="pagination">

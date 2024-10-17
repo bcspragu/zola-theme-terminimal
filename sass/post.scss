@@ -11,6 +11,14 @@
   margin: 20px auto;
   padding: 20px 0;
 
+  &.post--header-only {
+    &:not(:last-of-type) {
+      border-bottom: none;
+    }
+    margin: 30px auto;
+    padding: 0;
+  }
+
   @media (max-width: $tablet-max-width) {
     max-width: 660px;
   }
@@ -43,6 +51,12 @@
     padding-bottom: 15px;
     border-bottom: var(--border);
     font-weight: normal;
+
+    &.header-page {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
 
     a {
       text-decoration: none;
@@ -91,9 +105,10 @@
     list-style: none;
 
     li:before {
-      content: '►';
+      content: '⁍';
       position: absolute;
       left: -20px;
+      top: -1px;
       color: var(--accent);
     }
   }
@@ -132,4 +147,8 @@
   .post-tag {
     text-decoration: underline;
   }
+}
+
+.footnote-definition p {
+  display: inline;
 }
