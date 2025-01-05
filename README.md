@@ -4,6 +4,16 @@ This fork mostly makes minor changes to suit my own boring sensibilities, such a
 - Removing the vertical line flourish
 - Inlining the menu items with the header
   - And some mobile tweaks
+- Allowing terms in the `tags` taxonomy to have blurbs
+  - E.g. by creating `content/tags/<tag name>/index.md` files
+  - Unfortunately the approach I've taken **requires** each tag name have one of those files
+    - It can be as simple as:
+      ```
+      +++
+      title = ""
+      +++
+      ```
+      Which will render the same as usual
 
 # Terminimal
 

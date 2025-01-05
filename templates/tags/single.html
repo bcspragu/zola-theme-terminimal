@@ -6,16 +6,32 @@
 {%- endblock -%}
 
 {% block content %}
+    {% set page = get_page(path="tags/" ~ term.name ~ "/index.md") %}
     <div class="post">
+        {% if page.title %}
         <h1 class="post-title">
-            tag: #{{ term.name }}
-            ({{ term.pages | length }} post{{ term.pages | length | pluralize }})
+            {{page.title}}<br/>
+            <div class="post-subtitle">
+                 #{{ term.name }} ({{ term.pages | length }} post{{ term.pages | length | pluralize }})
+            </div>
         </h1>
+        {% else %}
+            <h1 class="post-title">
+                tag: #{{ term.name }}
+                ({{ term.pages | length }} post{{ term.pages | length | pluralize }})
+            </h1>
+        {% endif %}
+
+        {% if page.content %}
+        <div class="post-content">
+            {{ page.content | safe }}
+        </div>
+        {% endif %}
+
+        {{ post_macros::list_posts(pages=term.pages, show_date=false) }}
 
         <a href="{{ config.base_url | safe }}/tags/">
-            Show all tags
+            Back to all tags
         </a>
-
-        {{ post_macros::list_posts(pages=term.pages) }}
     </div>
 {% endblock content %}

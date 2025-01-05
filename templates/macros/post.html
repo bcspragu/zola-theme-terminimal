@@ -82,7 +82,7 @@
 {% endmacro index_header %}
 
 
-{% macro list_posts(pages) %}
+{% macro list_posts(pages, show_date=true) %}
     <ul>
     {%- for page in pages %}
         {%- if page.draft %}
@@ -90,8 +90,8 @@
         {% endif -%}
         <li class="post-list">
             <a href="{{ page.permalink | safe }}">
-                <span class="post-date">{{ page.date }}</span>
-                :: <span class="post-list-title">{{ page.title }}</span></a>
+                {% if show_date %}<span class="post-date">{{ page.date }} :: </span>{% endif %}
+                <span class="post-list-title">{{ page.title }}</span></a>
             {{ post_macros::tags(page=page) }}
         </li>
     {% endfor -%}
@@ -101,7 +101,7 @@
 
 {% macro tags(page) %}
     {%- if page.taxonomies and page.taxonomies.tags %}
-        <span class="post-tags-inline">
+        <span class="post-tags">
             {%- set sep = "&nbsp;" -%}
             {%- for tag in page.taxonomies.tags | sort | unique(case_sensitive=false) %}
                 <a class="post-tag" href="{{ get_taxonomy_url(kind='tags', name=tag) | safe }}">#{{ tag }}</a>
