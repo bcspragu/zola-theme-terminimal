@@ -4,6 +4,9 @@ This fork mostly makes minor changes to suit my own boring sensibilities, such a
 - Removing the vertical line flourish
 - Inlining the menu items with the header
   - And some mobile tweaks
+- Update the `image` shortcode to use full paths for the `src`
+  - And `alt | safe` to allow quotes in the description
+    - Be careful with this if you don't trust all your inputs
 - Allowing terms in the `tags` taxonomy to have blurbs
   - E.g. by creating `content/tags/<tag name>/index.md` files
   - Unfortunately the approach I've taken **requires** each tag name have one of those files
