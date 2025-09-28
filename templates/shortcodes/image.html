@@ -1,8 +1,4 @@
 {% if src %}
-  {# If the image's URL is internal to the site... #}
-  {% if src is not starting_with("http") %}
-    {# ... then prepend the site's base URL to the image's URL. #}
-    {% set src = config.base_url ~ "/" ~ page.colocated_path ~ src %}
-  {% endif %}
-  <img src="{{ src | safe }}"{% if alt %} alt="{{ alt | safe }}"{% endif %} class="{% if position %}{{ position }}{% else -%} center {%- endif %}" {%- if style %} style="{{ style | safe }}" {%- endif %} decoding="async" loading="lazy"/>
+  {% set resized_src = resize_image(path=page.colocated_path ~ src, width=800, op="fit_width", format="webp") %}
+  <img src="{{ resized_src.url }}"{% if alt %} alt="{{ alt | safe }}"{% endif %} class="{% if position %}{{ position }}{% else -%} center {%- endif %}" {%- if style %} style="{{ style | safe }}" {%- endif %} decoding="async" loading="lazy"/>
 {% endif %}

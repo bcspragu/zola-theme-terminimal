@@ -18,6 +18,8 @@ This fork mostly makes minor changes to suit my own boring sensibilities, such a
       ```
       Which will render the same as usual
 - Using [Berkeley Mono](https://usgraphics.com/products/berkeley-mono), which I have a license for, as the font and removing all the Hack-related features
+- Adding auto-image webp-ifying and scaling
+- Tweaking blockquotes
 
 # Terminimal
 
