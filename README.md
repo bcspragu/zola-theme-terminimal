@@ -17,6 +17,7 @@ This fork mostly makes minor changes to suit my own boring sensibilities, such a
       +++
       ```
       Which will render the same as usual
+- Using [Berkeley Mono](https://usgraphics.com/products/berkeley-mono), which I have a license for, as the font and removing all the Hack-related features
 
 # Terminimal
 
@@ -309,29 +310,6 @@ site:
 default_language = "en"
 ```
 
-### Hack font subset
-
-By default, the theme uses a mixed subset of the Hack font.
-Normal weight font uses full character set
-(for Unicode icons and special symbols), but all others
-(bold, italic etc) use a limited subset.
-
-This results in much smaller transfer sizes, but the subset
-might not contain all the Unicode characters you need.
-
-You can enable full unicode support in `config.toml`:
-
-```toml
-[extra]
-
-# Use full Hack character set, not just a subset.
-# Switch this to true if you need full unicode support.
-# Defaults to false.
-use_full_hack_font = true
-```
-
-Also see [Hack's docs](https://github.com/source-foundry/Hack/blob/master/docs/WEBFONT_USAGE.md).
-
 ### Favicon
 
 The theme supports adding a global favicon (applies to
@@ -417,8 +395,6 @@ This theme has been forked from https://github.com/panr/hugo-theme-terminal
 - All references to external URLs (e.g. Google CDN) have been removed.
   This theme's static assets are meant to be served from where it's hosted.
 
-- [Hack](https://github.com/source-foundry/Hack) is the default font.
-
 - The default color theme is blue (original uses orange).
 
 ### New features
@@ -445,6 +421,3 @@ Original theme: Copyright © 2019 Radosław Kozieł ([@panr](https://twitter.com
 The theme is released under the MIT License.
 Check the [license file](../master/LICENSE.md)
 for more information.
-
-The license for Hack fonts used is included in
-[LICENSE-Hack.md](../master/LICENSE-Hack.md).
