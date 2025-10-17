@@ -154,6 +154,33 @@
   }
 }
 
+sup.footnote-reference a {
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px dashed var(--color);
+  padding: 1px;
+  margin-left: 3px;
+  line-height: 0;
+  font-size: 0.75rem;
+}
+
+.footnote-reference:target {
+  color: yellow;
+
+  a {
+    border-color: yellow;
+  }
+}
+
 .footnote-definition p {
   display: inline;
+}
+
+section.footnotes::before {
+  display: inline-block;
+  content: "";
+  width: 100%;
+  border: none;
+  background: var(--border-color);
+  height: 1px;
 }
