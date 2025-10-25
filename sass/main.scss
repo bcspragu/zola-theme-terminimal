@@ -96,7 +96,7 @@ figure {
 
   figcaption {
     font-size: 14px;
-    margin-top: 5px;
+    margin-top: 10px;
 
     &.left {
       text-align: left;
@@ -108,6 +108,10 @@ figure {
 
     &.right {
       text-align: right;
+    }
+
+    p {
+      margin: 0;
     }
   }
 }
