@@ -15,7 +15,7 @@ body {
   padding: 0;
   font-family: "Berkeley Mono", "DejaVu Sans Mono", Monaco, Consolas, "Ubuntu Mono", monospace;
   font-size: 1rem;
-  line-height: 1.54;
+  line-height: 1.4;
   background-color: var(--background);
   color: var(--color);
   text-rendering: optimizeLegibility;
@@ -24,7 +24,7 @@ body {
   -webkit-text-size-adjust: 100%;
 
   @media (max-width: $phone-max-width) {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
 }
 
@@ -133,10 +133,8 @@ pre {
   border-top: 1px solid rgba(255, 255, 255, .1);
   border-bottom: 1px solid rgba(255, 255, 255, .1);
 
-  @media (max-width: $phone-max-width) {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-  }
+  white-space: pre-wrap;
+  word-wrap: break-word;
 
   code {
     padding: 0;
@@ -198,10 +196,11 @@ ul, ol {
 
   li {
     position: relative;
+    margin-bottom: 5px;
   }
 
   @media (max-width: $phone-max-width) {
-    margin-left: 20px;
+    margin-left: 25px;
   }
 }
 
@@ -218,7 +217,7 @@ ol ol {
   margin: 0 auto;
 
   @media (max-width: $phone-max-width) {
-    padding: 20px;
+    padding: 10px;
   }
 }
 
