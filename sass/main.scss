@@ -15,7 +15,7 @@ body {
   padding: 0;
   font-family: "Berkeley Mono", "DejaVu Sans Mono", Monaco, Consolas, "Ubuntu Mono", monospace;
   font-size: 1rem;
-  line-height: 1.4;
+  line-height: 1.5;
   background-color: var(--background);
   color: var(--color);
   text-rendering: optimizeLegibility;
@@ -24,7 +24,7 @@ body {
   -webkit-text-size-adjust: 100%;
 
   @media (max-width: $phone-max-width) {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -120,21 +120,22 @@ code {
   font-family: "Berkeley Mono", DejaVu Sans Mono, Monaco, Consolas, Ubuntu Mono, monospace;
   font-feature-settings: normal;
   background: var(--accent-alpha-20);
-  padding: 1px 6px;
-  margin: 0 2px;
-  font-size: .95rem;
+  padding: 1px 0;
 }
 
 pre {
   font-family: "Berkeley Mono", DejaVu Sans Mono, Monaco, Consolas, Ubuntu Mono, monospace;
   padding: 20px;
-  font-size: .95rem;
   overflow: auto;
   border-top: 1px solid rgba(255, 255, 255, .1);
   border-bottom: 1px solid rgba(255, 255, 255, .1);
 
   white-space: pre-wrap;
   word-wrap: break-word;
+
+  @media (max-width: $phone-max-width) {
+    padding: 10px;
+  }
 
   code {
     padding: 0;
@@ -144,12 +145,14 @@ pre {
 }
 
 blockquote {
-  border-top: 1px solid var(--accent-alpha-20);
-  border-bottom: 1px solid var(--accent-alpha-20);
+  border-left: 5px solid var(--accent-alpha-20);
+
   margin: 20px 0;
-  padding: 25px;
+  padding: 0 25px;
 
   @media (max-width: $phone-max-width) {
+    border-left-width: 3px;
+    padding-left: 15px;
     padding-right: 0;
   }
 
@@ -165,20 +168,14 @@ blockquote {
     position: relative;
   }
 
-  p:before {
-    content: '>';
-    display: block;
-    position: absolute;
-    left: -25px;
-    color: var(--accent);
-  }
 }
 
 table {
   table-layout: auto;
   border-collapse: collapse;
-  width: 100%;
-  margin: 40px 0;
+  max-width: 100%;
+  margin: 20px 0;
+  word-break: break-word;
 }
 
 table, th, td {
