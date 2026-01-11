@@ -150,29 +150,38 @@
   }
 }
 
+sup {
+  line-height: 0;
+}
+
 sup.footnote-reference {
   scroll-margin-top: 20vh;
 
-  text-decoration: none;
+  a {
+    text-decoration: none;
+    padding: 0 1px;
+  }
+
+  color: yellow;
+  margin-left: 1px;
   font-weight: bold;
-  border: 1px dashed var(--color);
-  padding: 1px;
-  margin-left: 3px;
   line-height: 0;
   font-size: 0.75rem;
 
   @media (max-width: $phone-max-width) {
-    margin-left: 1px;
     font-size: 0.65rem;
   }
 }
 
 .footnote-reference:target {
-  color: yellow;
-
+  margin-left: 2px;
   a {
-    border-color: yellow;
+    border: 1px solid yellow;
   }
+}
+
+.footnotes .footnotes-list li:target {
+  color: yellow;
 }
 
 .footnote-definition p {
