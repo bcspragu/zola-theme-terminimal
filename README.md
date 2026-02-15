@@ -20,6 +20,8 @@ This fork mostly makes minor changes to suit my own boring sensibilities, such a
 - Using [Berkeley Mono](https://usgraphics.com/products/berkeley-mono), which I have a license for, as the font and removing all the Hack-related features
 - Adding auto-image webp-ifying and scaling
 - Tweaking blockquotes
+- Adding support for asciinema videos
+  - The CSS + JS for it only load on posts that use it
 
 # Terminimal
 

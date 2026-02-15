@@ -1,0 +1,4 @@
+@import "asciinema-player/dist/bundle/asciinema-player.css";
+.ap-default-term-ff{
+  --term-font-family: "Berkeley Mono", "DejaVu Sans Mono", Monaco, Consolas, "Ubuntu Mono", monospace;
+}

@@ -4,6 +4,12 @@
 {{ title_macros::title(page_title=page.title, main_title=config.title) }}
 {%- endblock -%}
 
+{% block extra_head %}
+{% if page.extra.asciinema %}
+<link rel="stylesheet" href="{{ get_url(path='css/asciinema-player.min.css', trailing_slash=false) | safe }}">
+{% endif %}
+{% endblock extra_head %}
+
 {% block content %}
     <div class="post">
         {{ post_macros::header(page=page) }}
@@ -11,3 +17,9 @@
         {{ post_macros::earlier_later(page=page) }}
     </div>
 {% endblock content %}
+
+{% block extra_body %}
+{% if page.extra.asciinema %}
+<script src="{{ get_url(path='js/asciinema-player.min.js', trailing_slash=false) | safe }}"></script>
+{% endif %}
+{% endblock extra_body %}
