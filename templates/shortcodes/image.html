@@ -1,4 +1,6 @@
-{% if src %}
-  {% set resized_src = resize_image(path=page.colocated_path ~ src, width=800, op="fit_width", format="webp") %}
-  <img src="{{ resized_src.url }}"{% if alt %} alt="{{ alt | safe }}"{% endif %} class="{% if position %}{{ position }}{% else -%} center {%- endif %}" {%- if style %} style="{{ style | safe }}" {%- endif %} decoding="async" loading="lazy"/>
-{% endif %}
+{% component image(@page, src, alt = "", position = "", style = "") %}
+  {% if src %}
+    {% set resized_src = resize_image(path=page.colocated_path ~ src, width=800, op="fit_width", format="webp") %}
+<img src="{{ resized_src.url }}"{% if alt %} alt="{{ alt | safe }}"{% endif %} class="{% if position %}{{ position }}{% else -%} center {%- endif %}" {%- if style %} style="{{ style | safe }}" {%- endif %} decoding="async" loading="lazy"/>
+  {% endif %}
+{% endcomponent image %}

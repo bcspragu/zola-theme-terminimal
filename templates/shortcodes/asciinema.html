@@ -1,10 +1,12 @@
+{% component asciinema(src, cols = 0, rows = 0, autoplay = false, loop = false, speed = 0.0, theme = 0, poster = "", idle_time_limit = 0) %}
 <div data-cast-src="{{ src }}"
-  {%- if cols %} data-cols="{{ cols }}"{% endif -%}
-  {%- if rows %} data-rows="{{ rows }}"{% endif -%}
-  {%- if autoplay %} data-autoplay="{{ autoplay }}"{% endif -%}
-  {%- if loop %} data-loop="{{ loop }}"{% endif -%}
-  {%- if speed %} data-speed="{{ speed }}"{% endif -%}
-  {%- if theme %} data-theme="{{ theme }}"{% endif -%}
-  {%- if poster %} data-poster="{{ poster }}"{% endif -%}
-  {%- if idle_time_limit %} data-idle-time-limit="{{ idle_time_limit }}"{% endif -%}
+{%- if cols %} data-cols="{{ cols }}"{% endif -%}
+{%- if rows %} data-rows="{{ rows }}"{% endif -%}
+{%- if autoplay %} data-autoplay="{{ autoplay }}"{% endif -%}
+{%- if loop %} data-loop="{{ loop }}"{% endif -%}
+{%- if speed %} data-speed="{{ speed }}"{% endif -%}
+{%- if theme %} data-theme="{{ theme }}"{% endif -%}
+{%- if poster %} data-poster="{{ poster }}"{% endif -%}
+{%- if idle_time_limit %} data-idle-time-limit="{{ idle_time_limit }}"{% endif -%}
 ></div>
+{% endcomponent asciinema %}

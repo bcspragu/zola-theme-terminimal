@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 
 {%- block title -%}
-{{ title_macros::title(page_title=page.title, main_title=config.title) }}
+{{ <title page_title={page.title} main_title={config.title} /> }}
 {%- endblock -%}
 
 {% block extra_head %}
@@ -12,9 +12,9 @@
 
 {% block content %}
     <div class="post">
-        {{ post_macros::header(page=page) }}
-        {{ post_macros::content(page=page, summary=false, show_only_description=false) }}
-        {{ post_macros::earlier_later(page=page) }}
+        {{ <post.header page={page} /> }}
+        {{ <post.content page={page} summary={false} show_only_description={false} /> }}
+        {{ <post.earlier_later page={page} /> }}
     </div>
 {% endblock content %}
 

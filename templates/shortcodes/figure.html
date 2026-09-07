@@ -1,9 +1,11 @@
-{% if src %}
-  {% set resized_src = resize_image(path=page.colocated_path ~ src, width=800, op="fit_width", format="webp") %}
-  <figure class="{% if position %}{{ position }}{% else -%} center {%- endif %}" >
-    <img src="{{ resized_src.url }}"{% if alt %} alt="{{ alt | safe}}"{% endif %}{% if style %} style="{{ style }}"{% endif %} decoding="async" loading="lazy"/>
-    {% if caption %}
-      <figcaption class="{% if caption_position %}{{ caption_position }}{% else -%} center {%- endif %}"{% if caption_style %} style="{{ caption_style | safe }}"{% endif %}>{{ caption | markdown() | safe }}</figcaption>
-    {% endif %}
-  </figure>
-{% endif %}
+{% component figure(@page, src, alt = "", caption_position = "", width = 0, position = "", caption = "", style = "") %}
+  {% if src %}
+    {% set resized_src = resize_image(path=page.colocated_path ~ src, width=800, op="fit_width", format="webp") %}
+<figure class="{% if position %}{{ position }}{% else -%} center {%- endif %}" >
+<img src="{{ resized_src.url }}"{% if alt %} alt="{{ alt | safe}}"{% endif %}{% if style %} style="{{ style }}"{% endif %} decoding="async" loading="lazy" {% if width %}width={{width}}{% endif %}/>
+      {% if caption %}
+<figcaption class="{% if caption_position %}{{ caption_position }}{% else -%} center {%- endif %}"{% if caption_style %} style="{{ caption_style | safe }}"{% endif %}>{{ caption | markdown() | safe }}</figcaption>
+      {% endif %}
+</figure>
+  {% endif %}
+{% endcomponent figure %}

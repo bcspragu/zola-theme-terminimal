@@ -2,11 +2,11 @@
 
 {%- block title -%}
 {% set title = "Tag: " ~ term.name %}
-{{ title_macros::title(page_title=title, main_title=config.title) }}
+{{ <title page_title={title} main_title={config.title} /> }}
 {%- endblock -%}
 
 {% block content %}
-    {% set page = get_page(path="tags/" ~ term.name ~ "/index.md") %}
+    {% set page = get_page(path="tagszz/" ~ term.name ~ "/index.md") %}
     <div class="post">
         {% if page.title %}
         <h1 class="post-title">
@@ -28,7 +28,7 @@
         </div>
         {% endif %}
 
-        {{ post_macros::list_posts(pages=term.pages, show_date=false) }}
+        {{ <post.list_posts pages={term.pages} show_date={false} /> }}
 
         <a href="{{ config.base_url | safe }}/tags/">
             Back to all tags
