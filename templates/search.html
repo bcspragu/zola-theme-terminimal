@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{%- block title -%}
+{{ <title page_title={page.title} main_title={config.title} /> }}
+{%- endblock title -%}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{{ get_url(path='pagefind/pagefind-ui.css', trailing_slash=false) | safe }}">
+<link rel="stylesheet" href="{{ get_url(path='search.css', trailing_slash=false) | safe }}">
+{% endblock extra_head %}
+
+{% block content %}
+<div class="post search-page" data-pagefind-ignore>
+    <div id="search"></div>
+</div>
+{% endblock content %}
+
+{% block extra_body %}
+<script src="{{ get_url(path='pagefind/pagefind-ui.js', trailing_slash=false) | safe }}"></script>
+<script>
+    new PagefindUI({
+        element: "#search",
+        showImages: false,
+        showSubResults: true
+    });
+</script>
+{% endblock extra_body %}

@@ -3,6 +3,7 @@ This fork mostly makes minor changes to suit my own boring sensibilities, such a
 - Migrating to Zola 0.23, which required a bunch of macro/shortcode changes
   - Since they don't exist anymore
   - I'm using an custom version of Zola that incorporates unreleased Tera changes (implicit @vars), so def don't use this
+- Adding search functionality via [Pagefind](https://pagefind.app)
 - A grey theme
 - Removing the vertical line flourish
 - Inlining the menu items with the header

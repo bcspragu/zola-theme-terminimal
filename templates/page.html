@@ -11,7 +11,7 @@
 {% endblock extra_head %}
 
 {% block content %}
-    <div class="post">
+    <div class="post" data-pagefind-body>
         {{ <post.header page={page} /> }}
         {{ <post.content page={page} summary={false} show_only_description={false} /> }}
         {{ <post.earlier_later page={page} /> }}
